@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Form</title>
+    <style>
+        .a
+        {
+            margin-left: 550px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+    <div id="sawo-container" style="height: 300px; width: 300px;"></div>
+    </div>
+    <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
+    <script>
+        var config = {
+            // should be same as the id of the container created on 3rd step
+            containerID: "sawo-container",
+            // can be one of 'email' or 'phone_number_sms'
+            identifierType: "email",
+            // Add the API key copied from 2nd step
+            apiKey: "83370bcd-2bc9-43d5-9607-3ebcbd0510d6",
+            // Add a callback here to handle the payload sent by sdk
+            onSuccess: (payload) => {
+                window.location="./Greeting.html"
+            },
+        };
+        var sawo = new Sawo(config);
+        sawo.showForm();
+    </script>
+</body>
+
+</html>
